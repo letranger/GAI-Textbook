@@ -42,7 +42,7 @@
     const d = String(today.getDate()).padStart(2, '0');
     footerBar.innerHTML = `由 <a href="mailto:letranger@gm.tnfsh.tn.edu.tw">Letranger</a> 修改自 <a href="http://ccckmit.wikidot.com/">陳鍾誠作品</a> ｜ 採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/">創作共用：姓名標示、相同方式分享</a> ｜ <a href="license.html">授權方式</a> ｜ 最後修改：${y}/${m}/${d} ｜ <a href="https://hits.sh/letranger.github.io/AI/eliza.html/"><img alt="Hits" src="https://hits.sh/letranger.github.io/AI/eliza.html.svg" style="vertical-align:middle"/></a>`;
 
-    // ===== 台灣語氣設定 =====
+    // ===== 本土用語設定 =====
     const taiwaneseFiller = ["嗯…", "嘿嘿", "欸", "我覺得…", "其實…", "說真的…", "老實講…", "有點…"];    
     const taiwaneseOpeners = [
       () => greetingByTime(),
@@ -66,7 +66,7 @@
       if (hr < 5) return "夜深了，還沒睡嗎？要不要先休息一下？";
       if (hr < 12) return "早安！喝水了嗎？";
       if (hr < 18) return "午安～需要我幫你釐清點想法嗎？";
-      return "晚安！今天過得還行嗎？"; // 台灣常用「晚安」
+      return "晚安！今天過得還行嗎？"; 
     }
 
     // ===== 狀態記憶 =====
@@ -110,7 +110,7 @@
       return randomPick(map[mood]||map.neutral);
     }
 
-    // ===== 規則庫（台灣用語） =====
+    // ===== 規則庫 =====
     const qaList = [
       { Q: "謝謝|感謝|感恩", A:["不會啦～","小事小事！","別客氣，有需要就叫我"] },
       { Q: "對不起|抱歉|不好意思", A:["沒事啦，說說看你在意的點就好","別把責任都攬在自己身上，想想可以怎麼調整"] },
