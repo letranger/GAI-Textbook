@@ -191,9 +191,11 @@
       const input = document.getElementById('say');
       const text = input.value.trim();
       if (!text) return;
+      input.value = '';
+      input.setAttribute('value', '');
+      input.focus();
       addBubble(text, 'me');
       remember(text);
-      input.value = '';
       const typingEl = addBubble('正在輸入中…', 'bot', true);
       const delay = 600 + Math.random()*900;
       setTimeout(()=>{
@@ -208,7 +210,7 @@
       const greet = (typeof opener === 'function') ? opener() : opener;
       addBubble(`>> ${greet}`, 'bot');
       document.getElementById('sendBtn').addEventListener('click', handleSend);
-      document.getElementById('say').addEventListener('keydown', e=>{ if (e.key==='Enter') handleSend(); });
+      document.getElementById('say').addEventListener('keydown', e=>{ if (e.key==='Enter') { e.preventDefault(); handleSend(); } });
     }
 
     // 啟動
